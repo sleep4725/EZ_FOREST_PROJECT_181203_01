@@ -86,11 +86,11 @@ class PROJ:
     def urlRequests(self):
         e_params = urlencode(self.params)
         url = self.url_target + self.url_path + "?" + e_params
-        print (url)
+        # print (url)
         html = requests.get(url)
         if html.status_code == 200:
             self.resp_data = html.json()
-            pprint.pprint (self.resp_data)
+            # pprint.pprint (self.resp_data)
 
     # instance method - 3
     def reponseDataParcing(self):
@@ -103,12 +103,27 @@ class PROJ:
         '''
         for i in data:
 
-            print (i)
+            tmp_dict = dict(i)
 
+            for remv in ['_returnType', 'dataGubun', 'dataTerm', 'numOfRows', 'totalCount', 'pageNo',
+                         'resultCode', 'resultMsg', 'searchCondition','serviceKey', 'itemCode']:
+                try:
+                    tmp_dict.pop(remv)
+                except KeyError as e:
+                    print (e)
+
+            tmp_k = [k for k in tmp_dict.keys()]
+            for k in tmp_k:
+                t = {"si-name": None, "pm": None, "date-time": None}
+                if k != "dataTime":
+                    t["si-name"] = self.localinfo[k]
+                    t['pm'] = tmp_dict[k]
+                    t['date-time'] = tmp_dict['dataTime']
+                    self.json_data.append(t)
         # json 파일에 데이터 적재
-        # with open("./OUTPUT/DU_JSON/du.json", "a", encoding="utf-8") as make_json:
-        #     json.dump(self.json_data, make_json, ensure_ascii=False, indent="\t")
-        #     make_json.close()
+        with open("./OUTPUT/DU_JSON/du.json", "a", encoding="utf-8") as make_json:
+            json.dump(self.json_data, make_json, ensure_ascii=False, indent="\t")
+            make_json.close()
 
 def main():
     proj_node = PROJ() # 객체 생성
