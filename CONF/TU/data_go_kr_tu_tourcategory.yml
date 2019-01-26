@@ -1,0 +1,10 @@
+# 서비스 분류 코드
+url: http://api.visitkorea.or.kr
+params:
+  path: /openapi/service/rest/KorService/areaCode
+  serviceKey: McNJ0S9TlZmlJyQpHpMfZ2JU7kv0AlFlcsWgBPZxrPO1ddMd2N4Od61wsdpN+b/Op2LARnanjLLDF9do2+N45w==
+  pageNo: 1
+  numOfRows: 10
+  MobileOS: ETC
+  MobileApp: AppTest
+  areaCode: 1

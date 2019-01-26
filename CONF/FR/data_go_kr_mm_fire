@@ -1,0 +1,9 @@
+# junhyeon.kim@ezfarm.co.kr
+url: http://openapi.forest.go.kr
+params:
+  path: /openapi/service/forestDisasterService/fFireOpenAPI
+  serviceKey: McNJ0S9TlZmlJyQpHpMfZ2JU7kv0AlFlcsWgBPZxrPO1ddMd2N4Od61wsdpN+b/Op2LARnanjLLDF9do2+N45w==
+  pageNo: 1
+  numOfRows: 10
+  ffDt: 2018122410
+  _type: json

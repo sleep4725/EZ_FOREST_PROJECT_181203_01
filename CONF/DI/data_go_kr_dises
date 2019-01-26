@@ -1,8 +1,11 @@
 # junhyeon.kim@ezfarm.co.kr
-url: http://openapi.forest.go.kr
+# 예측진료정보조회
+url: http://apis.data.go.kr
 params:
-  path: /openapi/service/cultureInfoService/gdTrailInfoOpenAPI
+  path: /B550928/dissForecastInfoSvc/getDissForecastInfo
   serviceKey: McNJ0S9TlZmlJyQpHpMfZ2JU7kv0AlFlcsWgBPZxrPO1ddMd2N4Od61wsdpN+b/Op2LARnanjLLDF9do2+N45w==
   pageNo: 1
   numOfRows: 10
-  _type: json
+  type: xml
+  dissCd: 1
+  znCd: 11

@@ -1,0 +1,12 @@
+# junhyeon.kim@ezfarm.co.kr
+# 시도별 실시간 측정정보 조회
+url: http://openapi.airkorea.or.kr
+params:
+  path: /openapi/services/rest/ArpltnInforInqireSvc/getCtprvnRltmMesureDnsty
+  serviceKey: McNJ0S9TlZmlJyQpHpMfZ2JU7kv0AlFlcsWgBPZxrPO1ddMd2N4Od61wsdpN+b/Op2LARnanjLLDF9do2+N45w==
+  pageNo: 1
+  numOfRows: 10
+  sidoName: 인천
+  ver: 1.3
+  _returnType: json
+
